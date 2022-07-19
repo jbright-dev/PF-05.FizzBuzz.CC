@@ -58,11 +58,30 @@
         </div>
     </nav>
 
-    <main class="content"><!--Main Section-->        
+    <!------------Main Section------------>
+    <main class="content">
         <div class="container mt-5">
-            <h1>The App UI goes here</h1>
-            <input type="text" id="message" placeholder="Enter a Message"/>
-            <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+            <h3 class="mt-3">To Begin, Enter two numbers and press calculate</h3>
+            <div class="row">
+                <div clas="col">
+                    <label>Enter an start number (value)</label>
+                    <input type="text" id="startValue" placeholder="Enter a Number" value="3"/>
+                </div>
+                <div class="col">                    
+                    <label>Enter an end number (value)</label>
+                    <input type="text" id="endValue" placeholder="Enter a Number" value="6"/>
+                </div>
+            </div>
+            <div class="col">                    
+                <button id="btnSubmit" class="btn btn-primary justify-content-end">Calculate</button>
+            </div>
+            <hr>
+            <h2>Results</h2>
+            <div id="results">                    
+                <!--------------------------------------->
+                <!----------- Results Go Here ----------->
+                <!--------------------------------------->
+            </div>
         </div>
     </main>
 
@@ -109,7 +128,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="/js/site.js"></script>        
-    <script>document.getElementById("btnSubmit").addEventListener("click", getValue2);
+    <script>document.getElementById("btnSubmit").addEventListener("click", getValues);
     </script>
 
 
