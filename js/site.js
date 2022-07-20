@@ -11,18 +11,18 @@ function getValues(){
     startValue = parseInt(startValue);
     endValue = parseInt(endValue);
 
-    /*Create an if-else statement where the creates two variables using Number constructor, and calls the isInteger function with the individual parameters of startValue and endValue*/
-    if (Number.isInteger(startValue) && bNumber.isInteger(startValue)) {
+    /*Create an if-else statement where a Number constructor calls the isInteger function with individual parameters of startValue and endValue*/
+    if (Number.isInteger(startValue) && Number.isInteger(startValue)) {
         
         /*Within the scope block of the if statement define a variable which calls the generateNumbers function with the parameters of startValue and endValue*/
         let numbers = generateNumbers(startValue,endValue);
 
         /*Call the displayValues function using the parameter of numbers, which was passed into the function*/
-        displayValues(numbers);
+        displayNumbers(numbers);
 
     } else {
 
-        /*Within the else portion  of the statement enter the Sweet Alert*/
+        /*Within the else portion of the statement enter the Sweet Alert*/
             Swal.fire({
             backdrop: false,
             title: "I'm Sorry",
@@ -48,7 +48,7 @@ function generateNumbers(start,stop){
         numbers.push(i);        
     }
 
-    //Return the vaule for numbers
+    //Return the vaule for the variable numbers
     return numbers;
 }
 
@@ -58,17 +58,70 @@ function generateNumbers(start,stop){
 /*Declare a function which calls the built in displayNumbers function and possesses the parameter of numbersArray.*/
 function displayNumbers(numbersArray){
 
-    /*Create a variable of results which will be deined as the value contained within the element possesing the Id of "results"*/
-    let results = document.getElementById("results");
+        /*Create a variable of results which will be defined as the value contained within the element possesing the Id of "results"*/
+        let results = document.getElementById("results");
 
-    //Create a variable of div
+        
+        //Create a for-loop which declares a variable of i. the variable of i will consist of the previously defined "start" paramenter and as long as "i" is less than the previously defined stop, add 1 to the value.
+        for (let index = 0; index < numbersArray.length; index++){
 
-    //if divisble by both
+            /*Create a variable of div which is defined as a created  HTML element which has is a text string of "div"*/
+            let div = document.createElement("div");
 
-    //if divisible by 5
+            /*The value of div, which will be inserted it into the inner HTML, will be defined as the  content within the array numbersArray */
+            div.innerHTML = numbersArray[index];
+        
+            /*Create a variable of currentNumbers which is defined as the value of the contents within the index of the numbersArray array*/
+            let currentNumbers = numbersArray[index];
+        
+            /*Create an if-else statement where if the value of currentNumbers is a modulous of three*/
+            if (currentNumbers % 3===0)
 
-    //if divisible by 3
+            {
 
+                /*Within scope, if the statement is true the div value has a class added to it of "fizz"*/
+                div.classList.add("fizz");
+
+            /*Create an else if statement where if the value of currentNumbers is nota a modulous of three, but a modulous of five*/
+
+            }else if 
+            
+            /*Create an else if statement where the value of currenNumbers  is a modulous of five*/
+            (currentNumbers % 5===0)
+            
+            {
+
+            /*Within scope, if the statement is true the div value has a class added to it of "buzz"*/
+            div.classList.add("buzz");
+
+            }else if
+
+            
+            /*Create an else if statement where the value of currenNumbers  is a modulous of ten*/
+            (currentNumbers % 10===0)
+
+            {
+
+            /*Within scope, if the statement is true the div value has a class added to it of "buzz"*/
+            div.classList.add("fizzBuzz");
+            
+                                      
+            } else {
+
+            /*Within the scope, if none of the statements are true the div value has a class added to it of"nfnb*/
+            div.classList.add("nfnb");
+        
+        }
+
+        //The value of the variable results will be appended to the child of the pass-through variable div
+
+        results.appendChild(div);
+
+    }
+ 
 }
 
-//ExtraCredit Use Tables
+
+
+//if divisible by 5
+/*if divisible by 3*/
