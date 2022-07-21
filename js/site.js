@@ -49,7 +49,7 @@ function generateNumbers(start,stop){
     /*Create a for-loop where we create a variable of i which is defined as the value of start. As long as the value of i is less than or equal to the value of stop, add one to the value of i*/ 
     for (let i = start; i <= stop; i++) {
 
-        /*Within the scope of the loop, the value of i is appended to the end of teh array named numbersArray*/
+        /*Within the scope-block of the loop, the value of i is appended to the end of the array named numbersArray*/
         numbersArray.push(i);        
     }
 
