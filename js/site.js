@@ -3,26 +3,31 @@
 //Declare a new function that calls the built in getValues function the numbers
 function getValues(){
 
-    /* Within the scope-block of the function Create variables that are defined as values contained within the elements possesing the id of the scanned the document*/
+    /* Within the scope-block of the function create a variable of startValue that is defined as the value of the document-element possessing the id of startValue*/
     let startValue = document.getElementById("startValue").value;
+
+    /* Within the scope-block of the function create a variable of endValue that is defined as the value of the document-element possessing the id of endValue*/
     let endValue = document.getElementById("endValue").value;
 
-    /*Create a variable which calls the parse integer function*/
+    /*The variable startValue is defined as the value of the called built-in parseInt function and the value of the pass-through variable startValue*/
     startValue = parseInt(startValue);
+
+    /*The variable endValue is defined as the value of the called built-in parseInt function and the value of the pass-through variable endValue*/
     endValue = parseInt(endValue);
 
-    /*Create an if-else statement where a Number constructor calls the isInteger function with individual parameters of startValue and endValue*/
+    /*Create an if-else statement where if the value of the built-in isInteger function with the individual parameters of startValue and endValue is a Number...*/
     if (Number.isInteger(startValue) && Number.isInteger(startValue)) {
         
-        /*Within the scope block of the if statement define a variable which calls the generateNumbers function with the parameters of startValue and endValue*/
+        /*...Within the scope block of the if statement create a variable of numbers which is defined as the value of the called built-in generateNumbers function with the parameters of startValue and endValue*/
         let numbers = generateNumbers(startValue,endValue);
 
-        /*Call the displayValues function using the parameter of numbers, which was passed into the function*/
-        displayNumbers(numbers);
-
+        /*Call the built in displayValues function using the parameter of numbers, which was the value of the passed-through variable numbers*/
+        displayValues(numbers);
+    
+    //...or
     } else {
 
-        /*Within the else portion of the statement enter the Sweet Alert*/
+        /*Trigger a Sweet Alert*/
             Swal.fire({
             backdrop: false,
             title: "I'm Sorry",
@@ -38,83 +43,83 @@ function getValues(){
 /*Declare a new function which calls the built in generateNumbers function and possesses the parameters of start and stop*/
 function generateNumbers(start,stop){
 
-    //Create a variable of numbers which will have it's values entered into an array
-    let numbers = [];
+    /*Create a variable of numbers is defined as an array*/
+    let numbersArray = [];
 
-    //Create a for-loop which declares a variable of i. the variable of i will consist of the previously defined "start" paramenter and as long as "i" is less than the previously defined stop, add 1 to the value. 
+    /*Create a for-loop where we create a variable of i which is defined as the value of start. As long as the value of i is less than or equal to the value of stop, add one to the value of i*/ 
     for (let i = start; i <= stop; i++) {
 
-        /*Within the scope of the loop, call the push function, which places the value of variable numbers within an array consisting of value of i*/
-        numbers.push(i);        
+        /*Within the scope of the loop, the value of i is appended to the end of teh array named numbersArray*/
+        numbersArray.push(i);        
     }
 
-    //Return the vaule for the variable numbers
-    return numbers;
+    //Return the vaule for the variable numbersArray
+    return numbersArray;
 }
 
 
 //Create the View Function
 
-/*Declare a function which calls the built in displayNumbers function and possesses the parameter of numbersArray.*/
-function displayNumbers(numbersArray){
+/*Declare a new function which calls the function displayNumbers function and possesses the parameter of displayArray.*/
+function displayValues(displayArray) {
 
-        /*Create a variable of results which will be defined as the value contained within the element possesing the Id of "results"*/
+        /*Create a variable of results which is defined as the value of the document element possessing the Id of "results"*/
         let results = document.getElementById("results");
 
         
-        //Create a for-loop which declares a variable of i. the variable of i will consist of the previously defined "start" paramenter and as long as "i" is less than the previously defined stop, add 1 to the value.
-        for (let index = 0; index < numbersArray.length; index++){
+        /*Create a for-loop where we create a variable of index which is defined as the value of zero. As long as the value of index is less than the lengh of the array "displayArray", add one to the value of index*/
+        for (let index = 0; index < displayArray.length; index++) {
 
-            /*Create a variable of div which is defined as a created  HTML element which has is a text string of "div"*/
+            /*Within the scope-block of the for statement, create a variable of div which is defined as the value of the created document element "div"*/
             let div = document.createElement("div");
 
-            /*The value of div, which will be inserted it into the inner HTML, will be defined as the  content within the array numbersArray */
-            div.innerHTML = numbersArray[index];
+            /*The created variable div contains inner HTML which is defined as the value of the index of the array "display Array"*/
+            div.innerHTML = displayArray[index];
         
-            /*Create a variable of currentNumbers which is defined as the value of the contents within the index of the numbersArray array*/
-            let currentNumbers = numbersArray[index];
+            /*Create a variable of arrayNumber which is defined as the value of the contents within the index of the numbersArray array*/
+            let arrayNumber = displayArray[index];
         
-            /*Create an if-else statement where if the value of currentNumbers is a modulous of three*/
-            if (currentNumbers % 3===0)
+            /*Create an if-else statement where if the value of the variable arrayNumber is a modulous of three*/
+            if (arrayNumber % 3===0)
 
             {
 
-                /*Within scope, if the statement is true the div value has a class added to it of "fizz"*/
+                /*Within the scope block of the if-statement add the text string "fizz" to the class of the div variable*/
                 div.classList.add("fizz");
+                div.classList.add("border");
 
-            /*Create an else if statement where if the value of currentNumbers is nota a modulous of three, but a modulous of five*/
+                /*if not, create an if statement where if the value of the variable arrayNumber is a modulous of five*/
 
-            }else if 
+                }else if (arrayNumber % 5===0)
+                
+                {
+
+                /*Within the scope block of the if-statement add the text string "buzz" to the class of the div variable*/
+                div.classList.add("buzz");
+                div.classList.add("border");
+                
+                /*if not, create an if statement where if the value of the variable arrayNumber is a modulous of three and five*/
+                }else if (arrayNumber % 3===0 || arrayNumber % 5===0)
+
+                {
+
+                /*Within scope, if the statement add the text string "fizzBuzz" to the class of the div variable*/
+                div.classList.add("fizzBuzz");
+                div.classList.add("border");
+                
+                /*If not*/
+                } else {
+
+                /*Within the scope block of the if statements add the text string "nfnb" to the class of the div variable*/
+                div.classList.add("nfnb");
+                div.classList.add("border");
             
-            /*Create an else if statement where the value of currenNumbers  is a modulous of five*/
-            (currentNumbers % 5===0)
-            
-            {
+            }
 
-            /*Within scope, if the statement is true the div value has a class added to it of "buzz"*/
-            div.classList.add("buzz");
+        /*Add the text string "col" to the scope block to the class of the div variable*/
+        div.classList.add("col-2");
 
-            }else if
-
-            
-            /*Create an else if statement where the value of currenNumbers  is a modulous of ten*/
-            (currentNumbers % 10===0)
-
-            {
-
-            /*Within scope, if the statement is true the div value has a class added to it of "buzz"*/
-            div.classList.add("fizzBuzz");
-            
-                                      
-            } else {
-
-            /*Within the scope, if none of the statements are true the div value has a class added to it of"nfnb*/
-            div.classList.add("nfnb");
-        
-        }
-
-        //The value of the variable results will be appended to the child of the pass-through variable div
-
+        /*append the value of the dive variable to the results variable*/
         results.appendChild(div);
 
     }

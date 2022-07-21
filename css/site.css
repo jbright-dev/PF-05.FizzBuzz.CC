@@ -111,3 +111,45 @@ body{ /*This makes the page one column*/
     color: var(--jb-light-color);
     opacity: 1;
 }
+
+/*FizzBuzz Styling*/
+
+.fizz{
+    border: 5px black;
+    background-color: var(--jb-light-color);
+    font-weight: bold;
+    color: blue;
+    justify-content: center;
+    text-align: center;
+    padding: .75rem;
+}
+
+.buzz{
+    border: 5px black;
+    background-color: var(--jb-highlight1-color);
+    font-weight: bold;
+    color: red;
+    justify-content: center;
+    text-align: center;
+    padding: .75rem;
+}
+
+.fizzBuzz{
+    border: 5px black;
+    background-color:rgb(230, 150, 11);
+    font-weight: bold;
+    color: green;
+    justify-content: center;
+    text-align: center;
+    padding: .75rem;
+}
+
+.nfnb{
+    border: 5px black;
+    background-color: var(--jb-light-color);
+    color:var(--jb-primary-color);
+    justify-content: center;
+    text-align: center;
+    padding: .75rem;
+
+}
